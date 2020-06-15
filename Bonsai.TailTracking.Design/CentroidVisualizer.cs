@@ -55,15 +55,7 @@ namespace Bonsai.TailTracking.Design
             centroidData = (CentroidData)value;
             if (centroidData != null)
             {
-                if (centroidViewer.SelectedImageViewer == nameof(centroidData.BackgroundSubtractedImage) && centroidData.BackgroundSubtractedImage != null)
-                {
-                    centroidViewer.Update(centroidData.BackgroundSubtractedImage);
-                }
-                else if (centroidViewer.SelectedImageViewer == nameof(centroidData.Background) && centroidData.Background != null)
-                {
-                    centroidViewer.Update(centroidData.Background);
-                }
-                else if (centroidViewer.SelectedImageViewer == nameof(centroidData.Contours) && centroidData.Contours != null)
+                if (centroidViewer.SelectedImageViewer == nameof(centroidData.Contours) && centroidData.Contours != null)
                 {
                     centroidViewer.Update(centroidData.Contours);
                 }

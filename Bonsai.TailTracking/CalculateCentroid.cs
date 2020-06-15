@@ -102,10 +102,10 @@ namespace Bonsai.TailTracking
                     CV.DrawContours(contourImage, sortedComponents[0].Contour, Scalar.All(255), Scalar.All(0), 0, -1);
                     CV.DrawContours(contourImage, sortedComponents[0].Contour, new Scalar(0, 0, 255), Scalar.All(0), 0, 1);
                     
-                    return new CentroidData(centroid, image, thresh, contourImage, input.Background, input.BackgroundSubtractedImage);
+                    return new CentroidData(centroid, image, thresh, contourImage);
                 }
             }
-            return new CentroidData(centroid, image, thresh, null, input.Background, input.BackgroundSubtractedImage);
+            return new CentroidData(centroid, image, thresh, null);
         }
     }
 }

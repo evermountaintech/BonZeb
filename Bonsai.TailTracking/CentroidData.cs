@@ -10,16 +10,12 @@ namespace Bonsai.TailTracking
         public IplImage Image { get; set; }
         public IplImage ThresholdImage { get; set; }
         public IplImage Contours { get; set; }
-        public IplImage Background { get; set; }
-        public IplImage BackgroundSubtractedImage { get; set; }
-        public CentroidData(Point2f centroid, IplImage image, IplImage thresholdImage, IplImage contours = null, IplImage background = null, IplImage backgroundSubtractedImage = null)
+        public CentroidData(Point2f centroid, IplImage image, IplImage thresholdImage, IplImage contours = null)
         {
             Centroid = centroid;
             Image = image;
             ThresholdImage = thresholdImage;
             Contours = contours;
-            Background = background;
-            BackgroundSubtractedImage = backgroundSubtractedImage;
         }
     }
 }

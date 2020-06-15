@@ -102,35 +102,29 @@ namespace Bonsai.TailTracking
                 if (!findMax && (value > (minVal + delta)))
                 {
                     maxVal = value;
-                    if (!findMax)
+                    findMax = true;
+                    startPeakCounter = 0;
+                    if (firstPeak)
                     {
-                        findMax = true;
-                        startPeakCounter = 0;
-                        if (firstPeak)
-                        {
-                            firstPeak = false;
-                        }
-                        else
-                        {
-                            frequency = frameRate / (2.0 * prevPeakCounter);
-                        }
+                        firstPeak = false;
+                    }
+                    else
+                    {
+                        frequency = frameRate / (2.0 * prevPeakCounter);
                     }
                 }
                 else if (findMax && (value < (maxVal - delta)))
                 {
                     minVal = value;
-                    if (findMax)
+                    findMax = false;
+                    startPeakCounter = 0;
+                    if (firstPeak)
                     {
-                        findMax = false;
-                        startPeakCounter = 0;
-                        if (firstPeak)
-                        {
-                            firstPeak = false;
-                        }
-                        else
-                        {
-                            frequency = frameRate / (2.0 * prevPeakCounter);
-                        }
+                        firstPeak = false;
+                    }
+                    else
+                    {
+                        frequency = frameRate / (2.0 * prevPeakCounter);
                     }
                 }
                 if (!firstPeak)
